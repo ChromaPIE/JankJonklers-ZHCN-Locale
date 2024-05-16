@@ -1662,13 +1662,12 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local sunday_funnies = {
             loc = {
-                name = "Sunday Funnies",
+                name = "周日乐淘淘",
                 text = {
-                    "Create a random {C:planet}Planet{}",
-                    "or {C:tarot}Tarot{} card per 2",
-                    "{C:attention}rerolls{} in the shop",
-                    "{C:inactive}({C:green}#1#{}{C:inactive} rerolls left){}",
-                    "{C:inactive}(Must have room){}",
+                    "在商店中每{C:attention}重掷{}两次",
+                    "随机生成一张{C:planet}星球牌{}或{C:tarot}塔罗牌",
+                    "{C:inactive}（必须有空间）",
+                    "{C:inactive}（还剩{C:green}#1#{C:inactive}次重掷）"
                 }
             },
             ability_name = "Sunday Funnies",
@@ -1747,19 +1746,19 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local self_portrait = {
             loc = {
-                name = "Self Portrait",
+                name = "自画像",
                 text = {
-                    "This Joker gains {X:mult,C:white}X0.1{} Mult",
-                    "whenever you {C:attention}#1#{}.",
-                    "Changes every blind.",
-                    "{C:inactive}(Currently {X:mult,C:white}X#2#{}{C:inactive} Mult){}"
+                    "{C:attention}#1#{}时",
+                    "本牌获得{X:mult,C:white}X0.1{}倍率",
+                    "每个盲注改变上述要求",
+                    "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}倍率）"
                 }
             },
             ability_name = "Self Portrait",
             slug = "self_portrait",
             ability = {
                 extra = {
-                    ability_loc = "use a Tarot card",
+                    ability_loc = "使用塔罗牌",
                     ability_state = 1,
                     x_mult = 1
                 }
@@ -1845,14 +1844,14 @@ function SMODS.INIT.JankJonklersMod()
             elseif context.setting_blind and not self.getting_sliced then
                 if not context.blueprint  and not self.getting_sliced then
                     local conditions = {
-                        "use a Tarot card",
-                        "use a Planet card",
-                        "destroy a card",
-                        "play a hand with 3 or fewer cards",
-                        "discard 3 or more face cards",
-                        "play a High Card",
-                        "play a Straight",
-                        "play a Flush",
+                        "使用塔罗牌",
+                        "使用星球牌",
+                        "卡牌被摧毁",
+                        "打出的牌少于等于3张",
+                        "弃掉大于等于3张人头牌",
+                        "打出高牌",
+                        "打出顺子",
+                        "打出同花",
                     }
                     self.ability.extra.ability_state = pseudorandom_element({1, 2, 3, 4, 5, 6, 7, 8}, pseudoseed('self_insert'))
                     self.ability.extra.ability_loc = conditions[self.ability.extra.ability_state]
@@ -1871,12 +1870,12 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local memorable = {
             loc = {
-                name = "Memorable Joker",
+                name = "难忘小丑",
                 text = {
-                    "This Joker gains {X:mult,C:white}X0.1{} Mult",
-                    "for each consecutive played hand",
-                    "containing exactly {C:attention}3{} cards",
-                    "{C:inactive}(Currently {X:mult,C:white}X#1#{}{C:inactive} Mult){}"
+                    "如果打出的牌正好是{C:attention}3{}张",
+                    "本牌获得{X:mult,C:white}X0.1{}倍率",
+                    "不合要求的出牌将重置倍率",
+                    "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）"
                 }
             },
             ability_name = "Memorable Joker",
@@ -1923,11 +1922,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local tapestry = {
             loc = {
-                name = "Tapestry Joker",
+                name = "挂毯小丑",
                 text = {
-                    "This Joker gains {C:mult}+4{} Mult for",
-                    "each unique consumable used",
-                    "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive} Mult){}"
+                    "本赛局内每使用过一{C:attention}种{}消耗牌",
+                    "本牌获得{C:mult}+4{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
                 }
             },
             ability_name = "Tapestry Joker",
@@ -1985,11 +1984,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local sir = {
             loc = {
-                name = "Sir Joker",
+                name = "小丑爵士",
                 text = {
-                    "{X:mult,C:white}X1.5{} Mult during",
-                    "{C:attention}Boss Blinds{} or",
-                    "your {C:attention}final hand{}"
+                    "在{C:attention}Boss盲注{}中",
+                    "或{C:attention}最后一次出牌{}计分时",
+                    "{X:mult,C:white}X1.5{}倍率"
                 }
             },
             ability_name = "Sir Joker",
