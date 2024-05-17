@@ -427,7 +427,7 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local impractical = {
             loc = {
-                name = "Impractical Joker",
+                name = "即兴整蛊小丑",
                 text = {
                     "{X:mult,C:white}X3{} Mult if {C:attention}poker hand{}",
                     "is a {C:attention}#1#{},",
@@ -596,11 +596,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local makeshift = {
             loc = {
-                name = "Makeshift Joker",
+                name = "拼凑小丑",
                 text = {
-                    "This Joker gains {C:mult}+1{} Mult",
-                    "per {C:attention}card{} sold",
-                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
+                    "每次售出{C:attention}卡牌",
+                    "本牌获得{C:mult}+1{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
                 }
             },
             ability_name = "Makeshift Joker",
@@ -691,12 +691,12 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local ternary_system = {
             loc = {
-                name = "Ternary System",
+                name = "三星连珠",
                 text = {
-                    "Create a {C:planet}Planet{} card",
-                    "if played hand contains {C:attention}3{}",
-                    "cards and a {C:attention}Three of a Kind{}",
-                    "{C:inactive}(Must have room)"
+                    "如果正好打出{C:attention}3{}张牌",
+                    "且牌型为{C:attention}三条",
+                    "生成一张{C:planet}星球牌",
+                    "{C:inactive}（必须有空间）"
                 }
             },
             ability_name = "Ternary System",
@@ -754,10 +754,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local minimalist = {
             loc = {
-                name = "Minimalist Joker",
+                name = "极简小丑",
                 text = {
-                    "{C:mult}+10{} Mult if played hand",
-                    "contains no {C:attention}face cards{}"
+                    "若打出的牌",
+                    "不包含{C:attention}人头牌",
+                    "{C:mult}+10{}倍率"
                 }
             },
             ability_name = "Minimalist Joker",
@@ -858,11 +859,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local pawn = {
             loc = {
-                name = "Pawn Joker",
+                name = "当铺小丑",
                 text = {
-                    "{C:green}#1# in #2#{} chance to",
-                    "get {C:attention}$3{} when you",
-                    "{C:attention}sell{} a card"
+                    "售出卡牌时",
+                    "有{C:green}#1#/#2#{}的几率",
+                    "获得{C:attention}$3"
                 }
             },
             ability_name = "Pawn Joker",
@@ -1016,11 +1017,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local box_of_stuff = {
             loc = {
-                name = "Box of Stuff",
+                name = "拆封快递",
                 text = {
-                    "When {C:attention}Boss Blind{} is selected",
-                    "create three free {C:attention}Standard Tags{},",
-                    "then destroy this card"
+                    "选择{C:attention}Boss盲注{}时",
+                    "免费生成三个{C:attention}标准标签",
+                    "并摧毁本牌"
                 }
             },
             ability_name = "Box of Stuff",
@@ -1506,12 +1507,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local chalk_outline = {
             loc = {
-                name = "Chalk Outline",
+                name = "凶案现场",
                 text = {
-                    "This Joker gains {C:mult}+6{} Mult",
-                    "whenever you play",
-                    "your {C:attention}final hand{}",
-                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}"
+                    "{C:attention}最后一次出牌{}时",
+                    "本牌获得{C:mult}+6{}倍率",
+                    "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
                 }
             },
             ability_name = "Chalk Outline",
@@ -1607,11 +1607,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local cardslinger = {
             loc = {
-                name = "Cardslinger",
+                name = "卡牌术士",
                 text = {
-                    "{C:chips}+10{} Chips for each",
-                    "time a card scored",
-                    "this hand"
+                    "当前出牌中",
+                    "每有一张计分的牌",
+                    "{C:chips}+10{}筹码"
                 }
             },
             ability_name = "Cardslinger",
@@ -1667,7 +1667,7 @@ function SMODS.INIT.JankJonklersMod()
                     "在商店中每{C:attention}重掷{}两次",
                     "随机生成一张{C:planet}星球牌{}或{C:tarot}塔罗牌",
                     "{C:inactive}（必须有空间）",
-                    "{C:inactive}（还剩{C:green}#1#{C:inactive}次重掷）"
+                    "{C:inactive}（还需重掷{C:green}#1#{C:inactive}次）"
                 }
             },
             ability_name = "Sunday Funnies",
@@ -1870,7 +1870,7 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local memorable = {
             loc = {
-                name = "难忘小丑",
+                name = "小丑记忆之链",
                 text = {
                     "如果打出的牌正好是{C:attention}3{}张",
                     "本牌获得{X:mult,C:white}X0.1{}倍率",
