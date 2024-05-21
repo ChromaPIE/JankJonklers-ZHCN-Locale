@@ -481,12 +481,13 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local wanted_poster = {
             loc = {
-                name = "Wanted Poster",
+                name = "通缉令",
                 text = {
-                    "Gain {C:attention}$10{} when you",
-                    "beat a {C:attention}Blind{} first hand.",
-                    "Lose {C:attention}$2{} when you play",
-                    "a hand past your first"
+                    "若第一次出牌",
+                    "即击败{C:attention}盲注",
+                    "获得{C:money}$10",
+                    "否则每多出一次牌",
+                    "失去{C:attention}$2"
                 }
             },
             ability_name = "Wanted Poster",
@@ -906,11 +907,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local scrapper = {
             loc = {
-                name = "Scrapper Joker",
+                name = "好斗小丑",
                 text = {
-                    "{C:green}#1# in #2#{} chance to create a",
-                    "random {C:attention}Planet{} card when you",
-                    "discard five {C:attention}numbered{} cards"
+                    "有{C:green}#1#/#2#{}的几率",
+                    "在弃掉五张{C:attention}数字{}牌时",
+                    "随机生成一张{C:attention}星球牌"
                 }
             },
             ability_name = "Scrapper Joker",
@@ -967,10 +968,10 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local old_man = {
             loc = {
-                name = "Old Man Joker",
+                name = "老叟小丑",
                 text = {
-                    "When {C:attention}Boss Blind{} is selected",
-                    "create a free {C:attention}Ethereal Tag{}"
+                    "选择{C:attention}Boss盲注时",
+                    "免费生成一个{C:attention}空灵标签"
                 }
             },
             ability_name = "Old Man Joker",
@@ -1225,11 +1226,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local cut_the_cheese = {
             loc = {
-                name = "Cut the Cheese",
+                name = "切奶酪",
                 text = {
-                    "When {C:attention}Blind{} is selected",
-                    "create a random {C:attention}Food Joker{}",
-                    "{C:inactive}(Must have room){}"
+                    "选择{C:attention}盲注{}时",
+                    "随机生成一张{C:attention}食物小丑牌",
+                    "{C:inactive}（必须有空间）"
                 }
             },
             ability_name = "Cut the Cheese",
@@ -1265,6 +1266,30 @@ function SMODS.INIT.JankJonklersMod()
                         "j_selzer",
                         "j_diet_cola"
                     }
+                    if SMODS.findModByID("sdm_0s_stuff") then
+                        table.insert(food_list, "j_sdm_pizza")
+                        table.insert(food_list, "j_sdm_burger")
+                    end
+                    if SMODS.findModByID("MystJokers") then
+                        table.insert(food_list, "j_exploding_fruitcake")
+                        table.insert(food_list, "j_miracle_milk")
+                    end
+                    if SMODS.findModByID("MoreFluff") then
+                        table.insert(food_list, "j_mf_teacup")
+                        table.insert(food_list, "j_mf_tonersoup")
+                        table.insert(food_list, "j_mf_goldencarrot")
+                        table.insert(food_list, "j_mf_lollipop")
+                    end
+                    if SMODS.findModByID("CheesyJokers") then
+                        table.insert(food_list, "j_cj_cheese_wedge")
+                        table.insert(food_list, "j_cj_macarons")
+                    end
+                    if SMODS.findModByID("Bunco") then
+                        table.insert(food_list, "j_starfruit")
+                    end
+                    if SMODS.findModByID("mtl_jkr") then
+                        table.insert(food_list, "j_cherry")
+                    end
                     G.GAME.joker_buffer = G.GAME.joker_buffer + jokers_to_create
                     G.E_MANAGER:add_event(Event({
                         func = function() 
