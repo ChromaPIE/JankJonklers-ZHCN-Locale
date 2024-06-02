@@ -306,7 +306,7 @@ function SMODS.INIT.JankJonklersMod()
             loc = {
                 name = "午夜帮",
                 text = {
-                    "打出{V:1}#1#{C:attention}同花并计分时",
+                    "打出{V:1}#1#{C:attention}同花{}并计分时",
                     "本牌获得{X:mult,C:white} X0.5 {}倍率",
                     "击败盲注后改变需求花色",
                     "{C:inactive}（当前为{X:mult,C:white}X#2#{C:inactive}）"
@@ -533,12 +533,12 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local sentai = {
             loc = {
-                name = "Sentai Joker",
+                name = "超级战队小丑",
                 text = {
-                    "Gains {C:mult}+8{} Mult per",
-                    "{C:attention}Planet{} card used, resets",
-                    "when {C:attention}Boss Blind{} is defeated",
-                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
+                    "每使用一张{C:attention}星球牌",
+                    "获得{C:mult}+8{}倍率",
+                    "击败{C:attention}Boss盲注{}后重置",
+                    "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
                 }
             },
             ability_name = "Sentai Joker",
@@ -1076,10 +1076,10 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local expanded_art = {
             loc = {
-                name = "Expanded Art Joker",
+                name = "小丑半身像",
                 text = {
-                    "{C:attention}Enhanced Cards{} gives",
-                    "{C:chips}+30{} Chips when scored"
+                    "{C:attention}增强卡牌{}在计分时",
+                    "给予{C:chips}+30{}筹码"
                 }
             },
             ability_name = "Expanded Art Joker",
@@ -1357,11 +1357,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local suspicious_vase = {
             loc = {
-                name = "Suspicious Vase",
+                name = "蹊跷花瓶",
                 text = {
-                    "All {C:attention}2s{}, {C:attention}3s{} and {C:attention}4s{}",
-                    "become {C:attention}Glass Cards{} and",
-                    "give {X:mult,C:white}X2{} Mult when played."
+                    "打出的所有{C:attention}2{}、{C:attention}3{}和{C:attention}4",
+                    "均变为{C:attention}玻璃牌",
+                    "且可给予{X:mult,C:white}X2{}倍率"
                 }
             },
             ability_name = "Suspicious Vase",
@@ -1579,11 +1579,11 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local boredom_slayer = {
             loc = {
-                name = "Boredom Slayer",
+                name = "无聊终结者",
                 text = {
-                    "Reduce {C:attention}Blind{} requirements",
-                    "by {C:attention}10%{} whenever you",
-                    "play a hand",
+                    "出牌时，使{C:attention}盲注{}的",
+                    "最低得分要求",
+                    "削减{C:attention}10%"
                 }
             },
             ability_name = "Boredom Slayer",
