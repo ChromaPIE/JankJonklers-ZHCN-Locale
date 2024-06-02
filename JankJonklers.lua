@@ -694,7 +694,7 @@ function SMODS.INIT.JankJonklersMod()
                     "如果正好打出{C:attention}3{}张牌",
                     "且牌型为{C:attention}三条",
                     "生成一张{C:planet}星球牌",
-                    "{C:inactive}（必须有空间）"
+                    "{C:inactive}（必须有空位）"
                 }
             },
             ability_name = "Ternary System",
@@ -1229,7 +1229,7 @@ function SMODS.INIT.JankJonklersMod()
                 text = {
                     "选择{C:attention}盲注{}时",
                     "随机生成一张{C:attention}食物小丑牌",
-                    "{C:inactive}（必须有空间）"
+                    "{C:inactive}（必须有空位）"
                 }
             },
             ability_name = "Cut the Cheese",
@@ -1688,7 +1688,7 @@ function SMODS.INIT.JankJonklersMod()
                 text = {
                     "在商店中每{C:attention}重掷{}两次",
                     "随机生成一张{C:planet}星球牌{}或{C:tarot}塔罗牌",
-                    "{C:inactive}（必须有空间）",
+                    "{C:inactive}（必须有空位）",
                     "{C:inactive}（还需重掷{C:green}#1#{C:inactive}次）"
                 }
             },
