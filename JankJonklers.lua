@@ -802,12 +802,12 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local devoted = {
             loc = {
-                name = "Devoted Joker",
+                name = "奉献小丑",
                 text = {
-                    "When {C:attention}Boss Blind{} is selected",
-                    "gain {X:mult,C:white}X0.5{} Mult, then",
-                    "set your {C:attention}money{} to {C:attention}$0{}",
-                    "{C:inactive}(Currently {X:mult,C:white}x#1#{C:inactive})"
+                    "选择{C:attention}Boss盲注{}时",
+                    "本牌获得{X:mult,C:white}X0.5{}倍率",
+                    "并使{C:attention}资金{C:attention}归零",
+                    "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）"
                 }
             },
             ability_name = "Devoted Joker",
@@ -1270,8 +1270,8 @@ function SMODS.INIT.JankJonklersMod()
                         table.insert(food_list, "j_sdm_burger")
                     end
                     if SMODS.findModByID("MystJokers") then
-                        table.insert(food_list, "j_exploding_fruitcake")
-                        table.insert(food_list, "j_miracle_milk")
+                        table.insert(food_list, "j_myst_exploding_fruitcake")
+                        table.insert(food_list, "j_myst_miracle_milk")
                     end
                     if SMODS.findModByID("MoreFluff") then
                         table.insert(food_list, "j_mf_teacup")
