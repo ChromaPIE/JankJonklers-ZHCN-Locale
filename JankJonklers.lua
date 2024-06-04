@@ -158,11 +158,10 @@ function SMODS.INIT.JankJonklersMod()
     if config.j_stanczyk then
         local stanczyk = {
             loc = {
-                name = "Stańczyk",
+                name = "斯坦奇克",
                 text = {
-                    "Retrigger {C:attention}Enhanced Cards{}",
-                    "that are played or",
-                    "held in hand"
+                    "重新触发所有打出的",
+                    "和手牌中的{C:attention}增强卡牌"
                 }
             },
             ability_name = "Stańczyk",
@@ -1270,7 +1269,7 @@ function SMODS.INIT.JankJonklersMod()
                         table.insert(food_list, "j_sdm_burger")
                     end
                     if SMODS.findModByID("MystJokers") then
-                        table.insert(food_list, "j_myst_exploding_fruitcake")
+                        -- table.insert(food_list, "j_myst_exploding_fruitcake")
                         table.insert(food_list, "j_myst_miracle_milk")
                     end
                     if SMODS.findModByID("MoreFluff") then
