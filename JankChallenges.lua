@@ -11,8 +11,8 @@
 function SMODS.INIT.JankChallenges () 
 
     local challenges = G.CHALLENGES
-	G.localization.misc.challenge_names["c_mod_JankChallenges_pawnshop"] = "Pawn Shop"
-	G.localization.misc.challenge_names["c_mod_JankChallenges_LoJ"] = "Legend of Jimbo"
+	G.localization.misc.challenge_names["c_mod_JankChallenges_pawnshop"] = "典当行"
+	G.localization.misc.challenge_names["c_mod_JankChallenges_LoJ"] = "金宝传奇故事"
     
     table.insert(G.CHALLENGES,#G.CHALLENGES+1,{
         name = 'Pawn Shop',
