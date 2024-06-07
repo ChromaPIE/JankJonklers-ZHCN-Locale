@@ -19,8 +19,8 @@ function SMODS.INIT.JankChallenges ()
         id = 'c_mod_JankChallenges_pawnshop',
         rules = {
             custom = {
-                {id = 'no_reward_specific', value = 'Small'},
-                {id = 'no_reward_specific', value = 'Big'},
+                {id = 'no_reward_specific', value = '小'},
+                {id = 'no_reward_specific', value = '大'},
                 {id = 'no_extra_hand_money'},
                 {id = 'no_interest'},
             },
