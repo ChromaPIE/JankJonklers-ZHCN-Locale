@@ -558,7 +558,7 @@ function SMODS.INIT.JankJonklersMod()
         init_joker(sentai)
         -- Set local variables
         function SMODS.Jokers.j_sentai.loc_def(card)
-            return { card.ability.extra.mult }
+            return { card.ability.mult }
         end
         -- Calculate
         SMODS.Jokers.j_sentai.calculate = function(self, context)
@@ -568,7 +568,7 @@ function SMODS.INIT.JankJonklersMod()
                     mult_mod = self.ability.mult + self.ability.extra.mult
                 }
             elseif context.using_consumeable then
-                if not context.blueprint and context.consumeable.ability.set == 'Planet' then
+                if not context.blueprint and (context.consumeable.ability.set == 'Planet' or context.consumeable.ability.set == 'Planet_dx') then
                     self.ability.mult = self.ability.mult + self.ability.extra.mult
                     G.E_MANAGER:add_event(Event({
                         func = function() card_eval_status_text(self, 'extra', nil, nil, nil, {message = localize{type='variable',key='a_mult',vars={self.ability.mult}}}); return true
