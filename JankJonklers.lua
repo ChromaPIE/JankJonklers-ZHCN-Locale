@@ -95,11 +95,11 @@ function SMODS.INIT.JankJonklersMod()
     if config.j_fortuno then
         local fortuno = {
             loc = {
-                name = "Fortuno",
+                name = "佛尔图诺",
                 text = {
-                    "For each {C:attention}numbered card{} scored",
-                    "in your first hand each round,",
-                    "destroy it and gain {C:attention}$3{}"
+                    "摧毁每回合第一次出牌中",
+                    "所有的{C:attention}数字牌",
+                    "每摧毁一张给予{C:attention}$3"
                 }
             },
             ability_name = "Fortuno",
@@ -258,10 +258,10 @@ function SMODS.INIT.JankJonklersMod()
     if config.j_jevil then
         local jevil = {
             loc = {
-                name = "Jevil",
+                name = "丑魔",
                 text = {
-                    "{C:attention}Straight Flushes{} give",
-                    "{C:chips}+1{} Chips when scored"
+                    "{C:attention}同花顺{}在计分时",
+                    "给予{C:chips}+1{}筹码"
                 }
             },
             ability_name = "Jevil",
@@ -1169,11 +1169,10 @@ function SMODS.INIT.JankJonklersMod()
         -- Create Joker
         local lieutenant = {
             loc = {
-                name = "Lieutenant Joker",
+                name = "小丑中尉",
                 text = {
-                    "After you play a {C:attention}High Card{}",
-                    "increase the {C:attention}rank{}",
-                    "of each card played."
+                    "打出{C:attention}高牌{}后",
+                    "提升每张牌的{C:attention}点数"
                 }
             },
             ability_name = "Lieutenant Joker",
