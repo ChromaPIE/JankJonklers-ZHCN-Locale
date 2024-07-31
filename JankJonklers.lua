@@ -535,7 +535,7 @@ function SMODS.INIT.JankJonklersMod()
                 name = "超级战队小丑",
                 text = {
                     "每使用一张{C:attention}星球牌",
-                    "获得{C:mult}+8{}倍率",
+                    "获得{C:mult}+#2#{}倍率",
                     "击败{C:attention}Boss盲注{}后重置",
                     "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
                 }
@@ -558,7 +558,7 @@ function SMODS.INIT.JankJonklersMod()
         init_joker(sentai)
         -- Set local variables
         function SMODS.Jokers.j_sentai.loc_def(card)
-            return { card.ability.mult }
+            return { card.ability.mult, card.ability.extra.mult }
         end
         -- Calculate
         SMODS.Jokers.j_sentai.calculate = function(self, context)
@@ -1122,7 +1122,7 @@ function SMODS.INIT.JankJonklersMod()
                 text = {
                     "打出{C:attention}高牌{}时",
                     "每张计分的牌",
-                    "永久获得{C:chips}+20{}筹码"
+                    "永久获得{C:chips}+#1#{}筹码"
                 }
             },
             ability_name = "Highlander Joker",
@@ -1530,7 +1530,7 @@ function SMODS.INIT.JankJonklersMod()
                 name = "凶案现场",
                 text = {
                     "{C:attention}最后一次出牌{}时",
-                    "本牌获得{C:mult}+6{}倍率",
+                    "本牌获得{C:mult}+#2#{}倍率",
                     "{C:inactive}（当前为{C:mult}+#1#{C:inactive}倍率）"
                 }
             },
@@ -1539,6 +1539,7 @@ function SMODS.INIT.JankJonklersMod()
             ability = {
                 extra = {
                     mult = 0,
+                    multb = 6
                 }
             },
             rarity = 1,
@@ -1552,13 +1553,13 @@ function SMODS.INIT.JankJonklersMod()
         init_joker(chalk_outline)
         -- Set local variables
         function SMODS.Jokers.j_chalk_outline.loc_def(card)
-            return { card.ability.extra.mult }
+            return { card.ability.extra.mult, card.ability.extra.multb }
         end
         -- Calculate
         SMODS.Jokers.j_chalk_outline.calculate = function(self, context)
             if context.joker_main and context.cardarea == G.jokers then
                 if G.GAME.current_round.hands_left == 0 then
-                    self.ability.extra.mult = self.ability.extra.mult + 6
+                    self.ability.extra.mult = self.ability.extra.mult + self.ability.extra.multb
                     G.E_MANAGER:add_event(Event({
                         func = function() card_eval_status_text(self, 'extra', nil, nil, nil, {message = localize('k_upgrade_ex')}); return true
                         end}))
