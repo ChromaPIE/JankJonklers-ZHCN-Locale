@@ -279,7 +279,7 @@ if config.j_jank_midnight_crew then
     
     -- Set local variables
     function midnight_crew.loc_vars(self, info_queue, card)
-        return { vars = { card.ability.extra.suit, card.ability.extra.x_mult, colours = { G.C.SUITS[card.ability.extra.suit] } } }
+        return { vars = { localize(card.ability.extra.suit,"suits_plural"), card.ability.extra.x_mult, colours = { G.C.SUITS[card.ability.extra.suit] } } }
     end
 
     -- Calculate
@@ -380,7 +380,7 @@ if config.j_jank_impractical then
         config = {
             extra = {
                 x_mult = 3,
-                poker_hand = "High Card",
+                poker_hand = G.localization.misc['poker_hands']['High Card'],
             }
         },
         rarity = 2,
@@ -394,7 +394,7 @@ if config.j_jank_impractical then
     
     -- Set local variables
     function impractical.loc_vars(self, info_queue, card)
-        return { vars = { card.ability.extra.poker_hand, card.ability.extra.x_mult } }
+        return { vars = { G.localization.misc['poker_hands'][card.ability.extra.poker_hand], card.ability.extra.x_mult } }
     end
 
     -- Calculate
@@ -1159,6 +1159,32 @@ if config.j_jank_cut_the_cheese then
                     "j_selzer",
                     "j_diet_cola"
                 }
+                -- Mod compat for CtC
+                if SMODS.Mods['sdm_0s_stuff'] then
+                    table.insert(food_list, "j_sdm_pizza")
+                    table.insert(food_list, "j_sdm_burger")
+                end
+                if SMODS.Mods['MystJokers'] then
+                    -- table.insert(food_list, "j_myst_exploding_fruitcake")
+                    table.insert(food_list, "j_myst_miracle_milk")
+                end
+                if SMODS.Mods['MoreFluff'] then
+                    table.insert(food_list, "j_mf_teacup")
+                    table.insert(food_list, "j_mf_tonersoup")
+                    table.insert(food_list, "j_mf_goldencarrot")
+                    table.insert(food_list, "j_mf_lollipop")
+                end
+                if SMODS.Mods['CheesyJokers'] then
+                    table.insert(food_list, "j_cj_cheese_wedge")
+                    table.insert(food_list, "j_cj_macarons")
+                end
+                if SMODS.Mods['Bunco'] then
+                    table.insert(food_list, "j_starfruit")
+                end
+                if SMODS.Mods['mtl_jkr'] then
+                    table.insert(food_list, "j_cherry")
+                    table.insert(food_list, "j_cafeg")
+                end
                 G.GAME.joker_buffer = G.GAME.joker_buffer + jokers_to_create
                 G.E_MANAGER:add_event(Event({
                     func = function()
